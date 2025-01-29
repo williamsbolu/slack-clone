@@ -30,21 +30,9 @@ export const EmojiPopover = ({
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
-  const onSelect = (value: EmojiClickData) => {
-    // For emoji emoji=picker-react package
-    onEmojiSelect(value.emoji);
-
-    setPopoverOpen(false);
-
-    setTimeout(() => {
-      // close the tooltip after 500ms incase it dosen't close sometimes
-      setTooltipOpen(false);
-    }, 500);
-  };
-
-  // const onSelectPicker = (value: any) => {
+  // const onSelect = (value: EmojiClickData) => {
   //   // For emoji emoji=picker-react package
-  //   onEmojiSelect(value.native);
+  //   onEmojiSelect(value.emoji);
 
   //   setPopoverOpen(false);
 
@@ -53,6 +41,18 @@ export const EmojiPopover = ({
   //     setTooltipOpen(false);
   //   }, 500);
   // };
+
+  const onSelectPicker = (value: any) => {
+    // For emoji emoji=picker-react package
+    onEmojiSelect(value.native);
+
+    setPopoverOpen(false);
+
+    setTimeout(() => {
+      // close the tooltip after 500ms incase it dosen't close sometimes
+      setTooltipOpen(false);
+    }, 500);
+  };
 
   return (
     <TooltipProvider>
@@ -71,16 +71,16 @@ export const EmojiPopover = ({
         </Tooltip>
 
         <PopoverContent className="p-0 w-full border-none shadow-none">
-          {/* <Picker
+          <Picker
             data={data}
             onEmojiSelect={onSelectPicker}
             // onEmojiSelect={(x: any) => {
             //   console.log(x);
             // }}
-          /> */}
+          />
 
-          {/* Another emoji package */}
-          <EmojiPicker onEmojiClick={onSelect} />
+          {/* Another emoji package that can be used */}
+          {/* <EmojiPicker onEmojiClick={onSelect} /> */}
         </PopoverContent>
       </Popover>
     </TooltipProvider>

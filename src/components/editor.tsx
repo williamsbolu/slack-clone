@@ -158,7 +158,9 @@ const Editor = ({
     const quill = quillRef.current;
 
     // insert the emoji at the current cursor position: (the last character position or we fall back to the first position if we don't have an index)
-    quill?.insertText(quill.getSelection()?.index || 0, emojiValue);
+    console.log(quill?.getSelection()?.index);
+
+    quill?.insertText(quill?.getSelection()?.index || 0, emojiValue);
   };
 
   const isEmpty = !image && text.replace(/<(.|\n)*?>/g, "").trim().length === 0; // Regex remove empty html elements
