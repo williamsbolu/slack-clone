@@ -24,3 +24,13 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
+// { // in case of errors on deployment add some of this options
+//   "compilerOptions": {
+//     "noUnusedLocals": false,    // For unused variables
+//     "noImplicitAny": false,     // For any type
+//     "strict": false             // Disables all strict type checking
+//   }
+
+
+// }
