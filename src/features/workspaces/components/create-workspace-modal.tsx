@@ -20,8 +20,8 @@ export const CreateWorkspaceModal = () => {
   const { mutate, isPending } = useCreateWorkspace();
 
   const handleClose = () => {
-    setOpen(false);
     setName("");
+    setOpen(false);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,11 +48,12 @@ export const CreateWorkspaceModal = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             value={name}
-            onChange={(e) => setName(e.target.value)}
             disabled={isPending}
+            onChange={(e) => setName(e.target.value)}
             required
             autoFocus
             minLength={3}
+            maxLength={80}
             placeholder="Workspace name e.g. 'Work', 'Personal', 'Home'"
           />
           <div className="flex justify-end">
