@@ -21,6 +21,7 @@ export default function Home() {
     if (workspageId) {
       router.replace(`/workspace/${workspageId}`);
     } else if (!open) {
+      // open a modal to create a workspace for the user
       setOpen(true);
     }
   }, [workspageId, isLoading, open, setOpen, router]);

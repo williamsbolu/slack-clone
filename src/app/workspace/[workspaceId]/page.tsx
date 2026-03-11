@@ -26,7 +26,7 @@ const WorkspaceIdPage = () => {
     workspaceId,
   });
 
-  // Whe get the first items on the channels array
+  // We get the first items on the channels array
   const channelId = useMemo(() => channels?.[0]?._id, [channels]);
   const isAdmin = useMemo(() => member?.role === "admin", [member?.role]);
 
