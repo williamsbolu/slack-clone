@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slack Clone
 
-## Getting Started
+A real-time Slack-like messaging application built with Next.js, Convex, and Tailwind CSS. This project features workspaces, channels, direct messaging, message threading, reactions, and image uploads.
 
-First, run the development server:
+![Slack Clone Preview](public/readme-featured-image.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend**: [Next.js](https://nextjs.org/) (App Router), [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
+- **Backend/Database**: [Convex](https://www.convex.dev/) (Serverless Database & Functions)
+- **Authentication**: [@convex-dev/auth](https://labs.convex.dev/auth)
+- **State Management**: [Jotai](https://jotai.org/), [Nuqs](https://nuqs.47ng.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/), [Sonner](https://sonner.emilkowal.ski/)
+- **Rich Text Editor**: [Quill](https://quilljs.com/)
+- **Package Manager**: [Bun](https://bun.sh/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🏢 **Workspaces**: Create and manage multiple workspaces.
+- 💬 **Channels**: Organized conversations within workspaces.
+- 👤 **Direct Messaging**: Private one-on-one conversations between members.
+- 🧵 **Message Threads**: Reply to specific messages to keep conversations organized.
+- 😀 **Reactions**: React to messages with emojis.
+- 🖼️ **Image Uploads**: Share images within messages.
+- 🔐 **Authentication**: Secure login and signup powered by Convex Auth.
+- 📱 **Responsive Design**: Fully functional on desktop and mobile devices.
+- ⚡ **Real-time Updates**: Instant messaging and updates via Convex's reactive engine.
 
-## Learn More
+## 📋 Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+Before you begin, ensure you have the following installed:
+- [Bun](https://bun.sh/) (recommended) or Node.js/NPM
+- A [Convex](https://www.convex.dev/) account
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Setup & Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd slack-tutorial
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies:**
+    ```bash
+    bun install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Setup Convex:**
+    Initialize the Convex project and follow the CLI prompts to link your account.
+    ```bash
+    bunx convex dev
+    ```
+    This will also generate your `.env.local` file with the required `NEXT_PUBLIC_CONVEX_URL`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Configure Environment Variables:**
+    Ensure your `.env.local` includes:
+    ```env
+    NEXT_PUBLIC_CONVEX_URL=your-convex-deployment-url
+    CONVEX_SITE_URL=your-auth-site-url # Typically set during Convex Auth setup
+    ```
+
+## 📖 Available Scripts
+
+- `bun run dev`: Runs the Next.js development server.
+- `bunx convex dev`: Runs the Convex development environment (watches for backend changes).
+- `bun run build`: Builds the application for production.
+- `bun run start`: Starts the production server.
+- `bun run lint`: Runs ESLint for code quality checks.
+
+## 📁 Project Structure
+
+- `src/app`: Next.js App Router pages and layouts.
+- `src/features`: Modular feature-based components, hooks, and stores (auth, workspaces, channels, etc.).
+- `src/components`: Common UI components and providers.
+- `src/hooks`: Custom React hooks.
+- `src/lib`: Utility functions.
+- `convex`: Convex backend functions (queries, mutations), schema, and authentication configuration.
+- `public`: Static assets (images, icons).
+
+## 🧪 Tests
+
+Currently, there are no automated tests configured for this project.
+
+---
+
+Built with ❤️ by Williams
